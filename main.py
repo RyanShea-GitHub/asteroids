@@ -19,13 +19,16 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-            
+        
+        player.update(dt)    
         screen.fill("black")
         player.draw(screen)
         
         pygame.display.flip()
 
-        dt == time.tick(60) / 1000
+        dt = time.tick(60) / 1000
+        print(f"dt: {dt}")
+        print(f"rotation: {player.rotation}")
 
  
 if __name__ == "__main__":
